@@ -22,7 +22,7 @@ public class Main {
 
         /* console */
         System.out.println("Hello "+me.firstName+"!");
-        System.out.println("Your car is "+me.car.producer+"!");
+        System.out.println("Your car is "+me.car.producer+" with "+me.car.horsePower+" HP!");
         dog.feed();
         for(int i=1; i<4; i++)
             dog.walk();
