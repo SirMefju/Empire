@@ -45,4 +45,8 @@ public class Human
         else
             System.out.println("Think about another car!");
     }
+    public String toString()
+    {
+        return this.firstName + " " + this.lastName;
+    }
 }

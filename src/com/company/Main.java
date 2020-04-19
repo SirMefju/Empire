@@ -19,6 +19,7 @@ public class Main {
         mouse.name = "Mouse";
         me.pet = dog;
 
+        Car dirtyOne = new Car ("Mercedes", "SEC", 300.0);
         Car cleanOne = new Car("Tesla", "Model S", 730.0);
         cleanOne.setValue(200000.0);
         me.setCar(cleanOne);
@@ -31,5 +32,11 @@ public class Main {
         System.out.println("Mateusz's salary: "+me.getSalary());
         System.out.println("Tesla's value: "+cleanOne.getValue());
         System.out.println(me.getCar().producer);
+
+        System.out.println(cleanOne);
+        System.out.println(dirtyOne);
+
+
+
     }
 }

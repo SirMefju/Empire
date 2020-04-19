@@ -67,4 +67,8 @@ public class Animal {
         }
         //equals is like ==
     }
+    public String toString()
+    {
+        return this.species + " " + this.name;
+    }
 }
