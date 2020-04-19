@@ -1,6 +1,7 @@
 package com.company;
 
 import com.company.devices.Car;
+import com.company.devices.Phone;
 
 public class Main {
 
@@ -19,10 +20,13 @@ public class Main {
         mouse.name = "Mouse";
         me.pet = dog;
 
+        Phone smartPhone = new Phone("Apple","iPhone",4.7,false);
+        me.phone = smartPhone;
+
         Car dirtyOne = new Car ("Mercedes", "SEC", 300.0);
         Car cleanOne = new Car("Tesla", "Model S", 730.0);
         cleanOne.setValue(200000.0);
-        me.setCar(cleanOne);
+        dirtyOne.setValue(90000.0);
 
         /* console */
         System.out.println("Hello "+me.firstName+"!");
@@ -31,14 +35,12 @@ public class Main {
             dog.walk();
         System.out.println("Mateusz's salary: "+me.getSalary());
         System.out.println("Tesla's value: "+cleanOne.getValue());
-        System.out.println(me.getCar().producer);
+        me.setCar(cleanOne);
 
         System.out.println(cleanOne);
         System.out.println(dirtyOne);
         System.out.println(dog);
         System.out.println(me);
-
-
-
+        System.out.println(smartPhone);
     }
 }
