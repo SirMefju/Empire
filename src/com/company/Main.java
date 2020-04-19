@@ -7,6 +7,7 @@ public class Main {
         Human me = new Human();
         me.firstName = "Mateusz";
         me.lastName = "Cieślik";
+        me.setSalary(17500.0);
 
         Animal dog = new Animal("dog");
         Animal lion = new Animal("lion");
@@ -26,5 +27,6 @@ public class Main {
         dog.feed();
         for(int i=1; i<4; i++)
             dog.walk();
+        System.out.println("Mateusz's salary: "+me.getSalary());
     }
 }
