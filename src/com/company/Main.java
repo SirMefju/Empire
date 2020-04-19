@@ -35,6 +35,8 @@ public class Main {
 
         System.out.println(cleanOne);
         System.out.println(dirtyOne);
+        System.out.println(dog);
+        System.out.println(me);
 
 
 

@@ -2,7 +2,6 @@ package com.company.devices;
 public class Car extends Device
 {
     public final Double horsePower;
-    public Double value;
 
     public Car(String producer, String model, Double horsePower)
     {
@@ -11,6 +10,6 @@ public class Car extends Device
     }
     public String toString()
     {
-        return super.toString();
+        return this.producer+" "+this.model;
     }
 }

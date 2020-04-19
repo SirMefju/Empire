@@ -11,4 +11,8 @@ public class Phone extends Device
         this.screenSize = screenSize;
         this.isAndroid = isAndroid;
     }
+    public String toString()
+    {
+        return this.producer+" "+this.model;
+    }
 }
