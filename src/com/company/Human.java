@@ -6,4 +6,5 @@ public class Human
     String lastName;
     Animal pet;
     Phone phone;
+    Car car;
 }

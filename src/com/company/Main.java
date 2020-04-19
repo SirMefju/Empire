@@ -16,8 +16,13 @@ public class Main {
         mouse.name = "Mouse";
         me.pet = dog;
 
+        Car tesla = new Car("Tesla", "Model S", 730.0, "GD 947WH");
+        me.car = tesla;
+
+
         /* console */
         System.out.println("Hello "+me.firstName+"!");
+        System.out.println("Your car is "+me.car.producer+"!");
         dog.feed();
         for(int i=1; i<4; i++)
             dog.walk();
