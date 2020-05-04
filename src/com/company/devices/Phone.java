@@ -1,11 +1,16 @@
 package com.company.devices;
 
 import com.company.creatures.Human;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class Phone extends Device
 {
     public final Double screenSize;
     public final boolean isAndroid;
+    /*public static final String DEFAULT_VERSION = "latest";
+    public static final String DEFAULT_PROTOCOL = "https";
+    public static final String DEFAULT_HOST = "ourAppStore.com";*/
 
     public Phone(String producer, String model, int yearOfProduction, Double screenSize, boolean isAndroid)
     {
@@ -38,6 +43,29 @@ public class Phone extends Device
             System.out.println("You don't have "+this+", "+seller);
         }
     }
+    /*public void installAnApp(String appName) throws MalformedURLException
+    {
+        this.installAnApp(appName, "latest");
+    }
+
+    public void installAnApp(String appName, String version) throws MalformedURLException
+    {
+        URL url = new URL("https", "https://ourAppStore/" + appName + "/" + version, 443, appName);
+        this.installAnApp(url);
+    }
+
+    public void installAnApp(URL url) {
+        //prawdziwa logika
+        System.out.println("zainstalowałem aplikację " + url.getFile());
+    }
+
+    public void installAnApp(String[] appNames) throws MalformedURLException {
+        for (String appName : appNames) {
+            installAnApp(appName);
+        }
+    }
+        */
+
     public String toString()
     {
         return this.producer+" "+this.model;

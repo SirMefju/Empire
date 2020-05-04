@@ -2,7 +2,7 @@ package com.company.devices;
 
 import com.company.creatures.Human;
 
-public class Car extends Device
+public abstract class Car extends Device
 {
     public final Double horsePower;
 
@@ -33,6 +33,8 @@ public class Car extends Device
             System.out.println("You don't have "+this+", "+seller);
         }
     }
+    public abstract void refuel();
+
     public String toString()
     {
         return this.producer+" "+this.model;

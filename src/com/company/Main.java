@@ -3,12 +3,15 @@ package com.company;
 import com.company.creatures.FarmAnimal;
 import com.company.creatures.Human;
 import com.company.creatures.Pet;
-import com.company.devices.Car;
+import com.company.devices.Diesel;
+import com.company.devices.Electric;
 import com.company.devices.Phone;
 
-public class Main {
+public class Main
+{
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception
+    {
         Human me = new Human();
         me.firstName = "Mateusz";
         me.lastName = "Cieślik";
@@ -34,8 +37,8 @@ public class Main {
         Phone smartPhone = new Phone("Apple","iPhone",2020,4.7,false);
         me.phone = smartPhone;
 
-        Car dirtyOne = new Car ("Mercedes", "SEC", 1970,300.0);
-        Car cleanOne = new Car("Tesla", "Model S", 2019,730.0);
+        Diesel dirtyOne = new Diesel ("Mercedes", "SEC", 1970,300.0);
+        Electric cleanOne = new Electric("Tesla", "Model S", 2019,730.0);
         dirtyOne.setValue(90000.0);
         cleanOne.setValue(200000.0);
 
@@ -52,18 +55,14 @@ public class Main {
         cleanOne.turnOn();
         System.out.println(smartPhone);
         smartPhone.turnOn();
-
         dog.sell(sister,me,1500.0);
         System.out.println(sister+" your animal is: "+sister.pet.species);
         lion.sell(me,sister, 3000.0);
-
         cleanOne.sell(sister,me,90000.0);
         System.out.println(me+" your car still is: " +me.getCar());
         System.out.println(me+"'s account balance: "+me.cash);
-
         smartPhone.sell(sister,me,500.0);
-
         pig.beEaten();
-
+        cleanOne.refuel();
     }
 }
