@@ -1,8 +1,8 @@
 package com.company.devices;
 
 import com.company.creatures.Human;
-import java.net.MalformedURLException;
-import java.net.URL;
+//import java.net.MalformedURLException;
+//import java.net.URL;
 
 public class Phone extends Device
 {
