@@ -1,4 +1,4 @@
-package com.company.devices;
+package com.company.creatures;
 import com.company.creatures.Human;
 
 public interface Salleable

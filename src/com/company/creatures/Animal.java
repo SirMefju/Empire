@@ -1,8 +1,6 @@
 package com.company.creatures;
 
-import com.company.devices.Salleable;
-
-public class Animal implements Salleable {
+public abstract class Animal implements Salleable, Edible, Feedable {
     public final String species;
     public String name;
     protected Double weight = 10.0;
@@ -10,6 +8,7 @@ public class Animal implements Salleable {
     static final public Double DEFAULT_DOG_WEIGHT = 10.0;
     static final public Double DEFAULT_LION_WEIGHT = 190.0;
     static final public Double DEFAULT_MOUSE_WEIGHT = 0.5;
+    static final public Double DEFAULT_FOOD_WEIGHT = 1.0;
 
     public Animal(String species) {
         this.species = species;
@@ -26,26 +25,23 @@ public class Animal implements Salleable {
         }
     }
 
-    public void feed() {
-        switch (species) {
-            case "dog":
-                System.out.println("Rondel: Feed me!");
-                break;
-            case "lion":
-                System.out.println("Leo: Feed me!");
-                break;
-            case "mouse":
-                System.out.println("Mouse: Feed me!");
-                break;
-        }
-        //console
-        weight++;
+    @Override
+    public void feed()
+    {
+        feed(DEFAULT_FOOD_WEIGHT);
+    }
+
+    @Override
+    public void feed(Double feedWeight)
+    {
+        weight+=feedWeight;
         System.out.println("Thx for food!");
         System.out.println(species + " weight: " + this.weight);
     }
-
-    public void walk() {
-        switch (species) {
+    public void walk()
+    {
+        switch (species)
+        {
             case "dog":
                 System.out.println("Rondel: Take me for walk!");
                 break;
@@ -56,7 +52,6 @@ public class Animal implements Salleable {
                 System.out.println("Mouse: Take me for walk!");
                 break;
         }
-        //console
         weight--;
         System.out.println("Thx man!");
         System.out.println(species + " weight: " + this.weight);
@@ -68,6 +63,13 @@ public class Animal implements Salleable {
             System.out.println("This pet die, you are freak!");
         }
         //equals is like ==
+    }
+    public void beEaten() throws Exception {
+        if (this instanceof Human || this instanceof Pet) {
+            throw new Exception("you are sick");
+        }
+        System.out.println(this.toString()+" [*]");
+        this.weight = 0.0;
     }
 
     public void sell(Human buyer, Human seller, Double price) throws Exception

@@ -1,12 +1,10 @@
 package com.company;
 
-import com.company.creatures.Animal;
 import com.company.creatures.FarmAnimal;
 import com.company.creatures.Human;
+import com.company.creatures.Pet;
 import com.company.devices.Car;
 import com.company.devices.Phone;
-
-import java.sql.SQLOutput;
 
 public class Main {
 
@@ -23,12 +21,14 @@ public class Main {
         sister.setSalary(12500.0);
         sister.cash = 5000.0;
 
-        Animal dog = new Animal("dog");
-        Animal lion = new Animal("lion");
-        Animal mouse = new Animal("mouse");
+        Pet dog = new Pet("dog");
+        Pet lion = new Pet("lion");
+        Pet mouse = new Pet("mouse");
+        FarmAnimal pig = new FarmAnimal("pig");
         dog.name = "Rondel";
         lion.name = "Leo";
         mouse.name = "Mouse";
+        pig.name = "Peppa";
         me.pet = dog;
 
         Phone smartPhone = new Phone("Apple","iPhone",2020,4.7,false);
@@ -41,7 +41,8 @@ public class Main {
 
         /* console */
         System.out.println("Hello "+me.firstName+"!");
-        dog.feed();
+        lion.feed();
+        dog.feed(1.0);
         for(int i=1; i<4; i++)
             dog.walk();
         System.out.println("Mateusz's salary: "+me.getSalary());
@@ -61,5 +62,8 @@ public class Main {
         System.out.println(me+"'s account balance: "+me.cash);
 
         smartPhone.sell(sister,me,500.0);
+
+        pig.beEaten();
+
     }
 }
