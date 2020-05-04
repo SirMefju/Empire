@@ -6,19 +6,22 @@ import com.company.creatures.Human;
 import com.company.devices.Car;
 import com.company.devices.Phone;
 
+import java.sql.SQLOutput;
+
 public class Main {
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) throws Exception {
         Human me = new Human();
         me.firstName = "Mateusz";
         me.lastName = "Cieślik";
         me.setSalary(17500.0);
+        me.cash = 150000.0;
 
         Human sister = new Human();
         sister.firstName = "Magda";
         sister.lastName = "Cieślik";
         sister.setSalary(12500.0);
+        sister.cash = 5000.0;
 
         Animal dog = new Animal("dog");
         Animal lion = new Animal("lion");
@@ -49,8 +52,14 @@ public class Main {
         System.out.println(smartPhone);
         smartPhone.turnOn();
 
-        System.out.println(dirtyOne);
-        System.out.println(dog);
-        System.out.println("All rights reserved "+me);
+        dog.sell(sister,me,1500.0);
+        System.out.println(sister+" your animal is: "+sister.pet.species);
+        lion.sell(me,sister, 3000.0);
+
+        cleanOne.sell(sister,me,90000.0);
+        System.out.println(me+" your car still is: " +me.getCar());
+        System.out.println(me+"'s account balance: "+me.cash);
+
+        smartPhone.sell(sister,me,500.0);
     }
 }

@@ -1,6 +1,8 @@
 package com.company.creatures;
 
-public class Animal {
+import com.company.devices.Salleable;
+
+public class Animal implements Salleable {
     public final String species;
     public String name;
     protected Double weight = 10.0;
@@ -66,6 +68,33 @@ public class Animal {
             System.out.println("This pet die, you are freak!");
         }
         //equals is like ==
+    }
+
+    public void sell(Human buyer, Human seller, Double price) throws Exception
+    {
+        if (this instanceof Human)
+        {
+            throw new Exception("you are sick");
+        }
+        if (seller.pet == this && price <= buyer.cash)
+        {
+            buyer.cash-=price;
+            seller.cash+=price;
+            buyer.pet = this;
+            seller.pet = null;
+            System.out.println(seller+" take care of him");
+            System.out.println(buyer+" just got "+this+" from "+seller);
+            System.out.println(seller+"'s account balance: "+seller.cash);
+            System.out.println(buyer+"'s account balance: "+buyer.cash);
+        }
+        else if (buyer.cash < price)
+        {
+            System.out.println(buyer+" you don't have enough money");
+        }
+        else
+        {
+            System.out.println("You don't have "+this+", "+seller);
+        }
     }
     public String toString()
     {

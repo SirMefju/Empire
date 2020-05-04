@@ -36,6 +36,10 @@ public class Human extends Animal
     {
         return this.car;
     }
+    public void setCar()
+    {
+        this.car = null;
+    }
     public void setCar(Car car)
     {
         if(this.salary>car.getValue())
