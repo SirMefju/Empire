@@ -1,16 +1,23 @@
-package com.company;
+package com.company.creatures;
 
 import com.company.devices.Car;
 import com.company.devices.Phone;
 
-public class Human
+public class Human extends Animal
 {
-    String firstName;
-    String lastName;
-    Animal pet;
-    Phone phone;
+    public String firstName;
+    public String lastName;
+    public Animal pet;
+    public Phone phone;
     private Car car;
     private Double salary = 20000.0;
+    public Double cash = 100000.0;
+
+    public Human()
+    {
+        super("homo sapiens");
+        this.weight = 50.0;
+    }
 
     public Double getSalary()
     {

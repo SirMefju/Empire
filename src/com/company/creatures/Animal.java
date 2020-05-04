@@ -1,9 +1,9 @@
-package com.company;
+package com.company.creatures;
 
 public class Animal {
-    final String species;
-    String name;
-    private Double weight = 10.0;
+    public final String species;
+    public String name;
+    protected Double weight = 10.0;
 
     static final public Double DEFAULT_DOG_WEIGHT = 10.0;
     static final public Double DEFAULT_LION_WEIGHT = 190.0;
@@ -24,7 +24,7 @@ public class Animal {
         }
     }
 
-    void feed() {
+    public void feed() {
         switch (species) {
             case "dog":
                 System.out.println("Rondel: Feed me!");
@@ -42,7 +42,7 @@ public class Animal {
         System.out.println(species + " weight: " + this.weight);
     }
 
-    void walk() {
+    public void walk() {
         switch (species) {
             case "dog":
                 System.out.println("Rondel: Take me for walk!");

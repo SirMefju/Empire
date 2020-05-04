@@ -5,11 +5,14 @@ public class Phone extends Device
     public final Double screenSize;
     public final boolean isAndroid;
 
-    public Phone(String producer, String model, Double screenSize, boolean isAndroid)
+    public Phone(String producer, String model, int yearOfProduction, Double screenSize, boolean isAndroid)
     {
-        super(producer, model);
+        super(producer, model, yearOfProduction);
         this.screenSize = screenSize;
         this.isAndroid = isAndroid;
+    }
+    public void turnOn() {
+        System.out.println("so call me maybe");
     }
     public String toString()
     {
