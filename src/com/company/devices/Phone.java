@@ -1,16 +1,16 @@
 package com.company.devices;
 
 import com.company.creatures.Human;
-//import java.net.MalformedURLException;
-//import java.net.URL;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class Phone extends Device
 {
     public final Double screenSize;
     public final boolean isAndroid;
-    /*public static final String DEFAULT_VERSION = "latest";
     public static final String DEFAULT_PROTOCOL = "https";
-    public static final String DEFAULT_HOST = "ourAppStore.com";*/
+    public static final String DEFAULT_HOST = "ourAppStore.com";
+    public static final Double DEFAULT_VERSION = 7.20;
 
     public Phone(String producer, String model, int yearOfProduction, Double screenSize, boolean isAndroid)
     {
@@ -43,28 +43,29 @@ public class Phone extends Device
             System.out.println("You don't have "+this+", "+seller);
         }
     }
-    /*public void installAnApp(String appName) throws MalformedURLException
-    {
-        this.installAnApp(appName, "latest");
+    public void installAnApp(URL url) {
+        System.out.println("New app from "+url.getHost()+" has been installed: "+url.getFile());
     }
 
-    public void installAnApp(String appName, String version) throws MalformedURLException
-    {
-        URL url = new URL("https", "https://ourAppStore/" + appName + "/" + version, 443, appName);
+    public void installAnApp(String appName, Double version, String host) throws MalformedURLException {
+        URL url = new URL(DEFAULT_PROTOCOL, host, 443, appName + " v." + version);
         this.installAnApp(url);
     }
 
-    public void installAnApp(URL url) {
-        //prawdziwa logika
-        System.out.println("zainstalowałem aplikację " + url.getFile());
+    public void installAnApp(String appName, Double version) throws MalformedURLException {
+        URL url = new URL(DEFAULT_PROTOCOL, DEFAULT_HOST, 443, appName + " v." + version);
+        this.installAnApp(url);
+    }
+
+    public void installAnApp(String appName) throws MalformedURLException {
+        this.installAnApp(appName, DEFAULT_VERSION);
     }
 
     public void installAnApp(String[] appNames) throws MalformedURLException {
-        for (String appName : appNames) {
+        for(String appName : appNames) {
             installAnApp(appName);
         }
     }
-        */
 
     public String toString()
     {

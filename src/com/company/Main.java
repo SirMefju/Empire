@@ -64,5 +64,8 @@ public class Main
         smartPhone.sell(sister,me,500.0);
         pig.beEaten();
         cleanOne.refuel();
+        sister.phone.installAnApp("WhatsApp");
+        sister.phone.installAnApp("WhatsApp",4.34);
+        sister.phone.installAnApp("GitHub",3.21,"github.com");
     }
 }
