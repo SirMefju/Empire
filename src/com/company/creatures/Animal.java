@@ -1,5 +1,7 @@
 package com.company.creatures;
 
+import com.company.Salleable;
+
 public abstract class Animal implements Salleable, Edible, Feedable {
     public final String species;
     public String name;
@@ -64,6 +66,7 @@ public abstract class Animal implements Salleable, Edible, Feedable {
         }
         //equals is like ==
     }
+    @Override
     public void beEaten() throws Exception {
         if (this instanceof Human || this instanceof Pet) {
             throw new Exception("you are sick");
@@ -71,7 +74,7 @@ public abstract class Animal implements Salleable, Edible, Feedable {
         System.out.println(this.toString()+" [*]");
         this.weight = 0.0;
     }
-
+    @Override
     public void sell(Human buyer, Human seller, Double price) throws Exception
     {
         if (this instanceof Human)

@@ -34,11 +34,7 @@ public abstract class Car extends Device
         }
     }
     public abstract void refuel();
-
-    public String toString()
-    {
-        return this.producer+" "+this.model;
-    }
+    @Override
     public void turnOn()
     {
         System.out.println("LAST ONE RIDE");

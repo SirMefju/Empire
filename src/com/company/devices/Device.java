@@ -13,7 +13,7 @@ public abstract class Device
         this.model = model;
         this.yearOfProduction = yearOfProduction;
     }
-
+    public abstract void turnOn();
     public Double getValue()
     {
         return this.value;

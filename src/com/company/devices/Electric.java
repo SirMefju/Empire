@@ -13,6 +13,6 @@ public class Electric extends Car
     }
     public String toString()
     {
-        return this.producer+" "+this.model;
+        return "Your Electric car: " +this.producer+" "+this.model;
     }
 }

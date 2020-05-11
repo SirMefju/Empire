@@ -18,6 +18,7 @@ public class Phone extends Device
         this.screenSize = screenSize;
         this.isAndroid = isAndroid;
     }
+    @Override
     public void turnOn()
     {
         System.out.println("so call me maybe");
