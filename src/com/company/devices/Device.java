@@ -1,6 +1,6 @@
 package com.company.devices;
 
-public abstract class Device
+public abstract class Device implements Comparable<Car>
 {
     public final String producer;
     public final String model;
@@ -21,6 +21,9 @@ public abstract class Device
     public void setValue(Double value)
     {
         this.value = value;
+    }
+    public int compareTo(Car otherCar) {
+        return (int) (this.yearOfProduction - otherCar.yearOfProduction);
     }
 }
 

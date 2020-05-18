@@ -6,11 +6,11 @@ public class Electric extends Car
     {
         super(producer, model, yearOfProduction, horsePower);
     }
-    @Override
+    /*(@Override
     public void refuel()
     {
         System.out.println("rich car");
-    }
+    }*/
     public String toString()
     {
         return "Your Electric car: " +this.producer+" "+this.model;

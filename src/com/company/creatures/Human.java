@@ -12,13 +12,30 @@ public class Human extends Animal
     private Car car;
     private Double salary = 20000.0;
     public Double cash = 100000.0;
+    public FarmAnimal[] farm;
+    public Car[] garage;
 
     public Human()
     {
         super("homo sapiens");
-        this.weight = 50.0;
+        this.weight = 80.0;
     }
-
+    public Human(Integer farmSize, Integer garageSize)
+    {
+        super("homo sapiens");
+        this.weight = 80.0;
+        this.farm = new FarmAnimal[farmSize];
+        this.garage = new Car[garageSize];
+    }
+    public void garageValue()
+    {
+        double garageValue = 0;
+        for (int i = 0; i < garage.length; i++)
+        {
+            garageValue += car.getValue();
+        }
+        System.out.println("Garage value: "+garageValue);
+    }
     public Double getSalary()
     {
         System.out.println("New data has been sent to accounting system."+"\n"+"ZUS and US already know about the change in payout and it makes no sense to hide your salary."+"\n"+"Remember to receive an annex to the contract from Ms. Hania from the staff.");

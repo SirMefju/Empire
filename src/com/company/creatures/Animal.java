@@ -2,7 +2,7 @@ package com.company.creatures;
 
 import com.company.Salleable;
 
-public abstract class Animal implements Salleable, Edible, Feedable {
+public abstract class Animal implements Salleable, Edible, Feedable, Comparable<Animal> {
     public final String species;
     public String name;
     protected Double weight = 10.0;
@@ -28,22 +28,19 @@ public abstract class Animal implements Salleable, Edible, Feedable {
     }
 
     @Override
-    public void feed()
-    {
+    public void feed() {
         feed(DEFAULT_FOOD_WEIGHT);
     }
 
     @Override
-    public void feed(Double feedWeight)
-    {
-        weight+=feedWeight;
+    public void feed(Double feedWeight) {
+        weight += feedWeight;
         System.out.println("Thx for food!");
         System.out.println(species + " weight: " + this.weight);
     }
-    public void walk()
-    {
-        switch (species)
-        {
+
+    public void walk() {
+        switch (species) {
             case "dog":
                 System.out.println("Rondel: Take me for walk!");
                 break;
@@ -66,43 +63,42 @@ public abstract class Animal implements Salleable, Edible, Feedable {
         }
         //equals is like ==
     }
+
     @Override
     public void beEaten() throws Exception {
         if (this instanceof Human || this instanceof Pet) {
             throw new Exception("you are sick");
         }
-        System.out.println(this.toString()+" [*]");
+        System.out.println(this.toString() + " [*]");
         this.weight = 0.0;
     }
+
     @Override
-    public void sell(Human buyer, Human seller, Double price) throws Exception
-    {
-        if (this instanceof Human)
-        {
+    public void sell(Human buyer, Human seller, Double price) throws Exception {
+        if (this instanceof Human) {
             throw new Exception("you are sick");
         }
-        if (seller.pet == this && price <= buyer.cash)
-        {
-            buyer.cash-=price;
-            seller.cash+=price;
+        if (seller.pet == this && price <= buyer.cash) {
+            buyer.cash -= price;
+            seller.cash += price;
             buyer.pet = this;
             seller.pet = null;
-            System.out.println(seller+" take care of him");
-            System.out.println(buyer+" just got "+this+" from "+seller);
-            System.out.println(seller+"'s account balance: "+seller.cash);
-            System.out.println(buyer+"'s account balance: "+buyer.cash);
-        }
-        else if (buyer.cash < price)
-        {
-            System.out.println(buyer+" you don't have enough money");
-        }
-        else
-        {
-            System.out.println("You don't have "+this+", "+seller);
+            System.out.println(seller + " take care of him");
+            System.out.println(buyer + " just got " + this + " from " + seller);
+            System.out.println(seller + "'s account balance: " + seller.cash);
+            System.out.println(buyer + "'s account balance: " + buyer.cash);
+        } else if (buyer.cash < price) {
+            System.out.println(buyer + " you don't have enough money");
+        } else {
+            System.out.println("You don't have " + this + ", " + seller);
         }
     }
-    public String toString()
-    {
+
+    public String toString() {
         return this.species + " " + this.name;
+    }
+
+    public int compareTo(Animal otherAnimal) {
+        return (int) (this.weight - otherAnimal.weight);
     }
 }

@@ -1,12 +1,13 @@
 package com.company.devices;
 
+import com.company.creatures.Animal;
 import com.company.creatures.Human;
 
-public abstract class Car extends Device
+public class Car extends Device
 {
     public final Double horsePower;
 
-    public Car(String producer, String model, int yearOfProduction, Double horsePower)
+    public Car(String producer, String model, int yearOfProduction, Double horsePower   )
     {
         super(producer, model, yearOfProduction);
         this.horsePower = horsePower;
@@ -33,10 +34,15 @@ public abstract class Car extends Device
             System.out.println("You don't have "+this+", "+seller);
         }
     }
-    public abstract void refuel();
+    //public abstract void refuel();
     @Override
     public void turnOn()
     {
         System.out.println("LAST ONE RIDE");
     }
+    public String toString()
+    {
+        return this.producer;
+    }
+
 }
