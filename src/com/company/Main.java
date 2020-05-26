@@ -64,7 +64,7 @@ public class Main
         System.out.println("Mateusz's salary: "+me.getSalary());
         System.out.println("Tesla's value: "+cleanOne.getValue());
         me.setCar(cleanOne,0);
-        me.setCar(smellyOne,1); //second time?
+        me.setCar(smellyOne,1);
         System.out.println(cleanOne);
         cleanOne.turnOn();
         System.out.println(smartPhone);

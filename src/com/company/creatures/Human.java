@@ -74,4 +74,39 @@ public class Human extends Animal
     {
         return this.garage[index];
     }
+
+    public boolean hasCar(Car newCar) {
+        for (Car car : garage) {
+            if (car == newCar) {
+                return true;
+            }
+        }
+        return false;
+    }
+    public boolean hasFreeSpace() {
+        for (Car car : garage) {
+            if (car == null) {
+                return true;
+            }
+        }
+        return false;
+    }
+    public void removeCar(Car newCar) {
+        for (int i = 0; i < this.garage.length; i++) {
+            if (this.garage[i] == newCar) {
+                this.garage[i] = null;
+            }
+        }
+    }
+    public void addCar(Car newCar) throws Exception {
+        if (!this.hasFreeSpace()) {
+            throw new Exception("nie ma miejsca");
+        }
+        for (int i = 0; i < this.garage.length; i++) {
+            if (this.garage[i] == null) {
+                this.garage[i] = newCar;
+                break;
+            }
+        }
+    }
 }
