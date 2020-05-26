@@ -63,8 +63,8 @@ public class Main
             dog.walk();
         System.out.println("Mateusz's salary: "+me.getSalary());
         System.out.println("Tesla's value: "+cleanOne.getValue());
-        me.setCar(cleanOne);
-        me.setCar(smellyOne);
+        me.setCar(cleanOne,0);
+        me.setCar(smellyOne,1); //second time?
         System.out.println(cleanOne);
         cleanOne.turnOn();
         System.out.println(smartPhone);
@@ -73,12 +73,10 @@ public class Main
         System.out.println(sister+" your animal is: "+sister.pet.species);
         lion.sell(me,sister, 3000.0);
         cleanOne.sell(sister,me,90000.0);
-        System.out.println(me+" your car still is: " +me.getCar());
+        System.out.println(me+" your car still is: " +me.getCar(0));
         System.out.println(me+"'s account balance: "+me.cash);
         smartPhone.sell(sister,me,500.0);
-        pig.beEaten();
-        cow.beEaten();
-        //cleanOne.refuel();
+        /* cleanOne.refuel(); */
         sister.phone.installAnApp("WhatsApp");
         sister.phone.installAnApp("WhatsApp",4.34);
         sister.phone.installAnApp("GitHub",3.21,"github.com");
@@ -87,6 +85,7 @@ public class Main
         {
             System.out.println(me.farm[i]);
         }
+        pig.beEaten();
         Arrays.sort(me.garage);
         for(int i = 0; i<me.garage.length;i++)
         {

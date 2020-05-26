@@ -9,7 +9,6 @@ public class Human extends Animal
     public String lastName;
     public Animal pet;
     public Phone phone;
-    private Car car;
     private Double salary = 20000.0;
     public Double cash = 100000.0;
     public FarmAnimal[] farm;
@@ -27,20 +26,21 @@ public class Human extends Animal
         this.farm = new FarmAnimal[farmSize];
         this.garage = new Car[garageSize];
     }
-    public void garageValue()
+    public Car[] getGarage()
     {
-        double garageValue = 0;
-        for (int i = 0; i < garage.length; i++)
-        {
-            garageValue += car.getValue();
+        return this.garage;
+    }
+    public Double garageValue()
+    {
+        Double garageValue = 0.0;
+        for (Car car : garage) {
+            if (car != null) {
+                garageValue += car.getValue();
+            }
         }
-        System.out.println("Garage value: "+garageValue);
+        return garageValue;
     }
-    public Double getSalary()
-    {
-        System.out.println("New data has been sent to accounting system."+"\n"+"ZUS and US already know about the change in payout and it makes no sense to hide your salary."+"\n"+"Remember to receive an annex to the contract from Ms. Hania from the staff.");
-        return salary;
-    }
+
     public void setSalary(Double salary)
     {
         if(salary<0)
@@ -49,31 +49,29 @@ public class Human extends Animal
             throw new IllegalArgumentException("u are not too good for that money");
         this.salary = salary;
     }
-    public Car getCar()
+    public Double getSalary()
     {
-        return this.car;
+        System.out.println("New data has been sent to accounting system."+"\n"+"ZUS and US already know about the change in payout and it makes no sense to hide your salary."+"\n"+"Remember to receive an annex to the contract from Ms. Hania from the staff.");
+        return salary;
     }
-    public void setCar()
-    {
-        this.car = null;
-    }
-    public void setCar(Car car)
+
+    public void setCar(Car car, Integer index)
     {
         if(this.salary>car.getValue())
         {
             System.out.println("You can buy car for cash!");
-            this.car = car;
+            this.garage[index] = car;
         }
         else if(this.salary*12>car.getValue())
         {
             System.out.println("You can buy a car on credit!");
-            this.car = car;
+            this.garage[index] = car;
         }
         else
             System.out.println("Think about another car!");
     }
-    public String toString()
+    public Car getCar(Integer index)
     {
-        return this.firstName + " " + this.lastName;
+        return this.garage[index];
     }
 }
