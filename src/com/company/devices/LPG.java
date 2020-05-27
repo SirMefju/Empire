@@ -13,6 +13,6 @@ public class LPG extends Car
     }*/
     public String toString()
     {
-        return "Your LPG car: " +this.producer+" "+this.model;
+        return "LPG car: " +this.producer+" "+this.model;
     }
 }

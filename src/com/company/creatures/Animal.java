@@ -95,7 +95,7 @@ public abstract class Animal implements Salleable, Edible, Feedable, Comparable<
     }
 
     public String toString() {
-        return this.species + " " + this.name;
+        return this.species;
     }
 
     public int compareTo(Animal otherAnimal) {

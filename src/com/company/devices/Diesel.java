@@ -13,6 +13,6 @@ public class Diesel extends Car
     }*/
     public String toString()
     {
-        return "Your Diesel car: "+this.producer+" "+this.model;
+        return "Diesel car: "+this.producer+" "+this.model;
     }
 }

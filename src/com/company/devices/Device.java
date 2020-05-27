@@ -5,7 +5,7 @@ public abstract class Device implements Comparable<Car>
     public final String producer;
     public final String model;
     public final int yearOfProduction;
-    private Double value = 2000.0;
+    private Double value = 20000.0;
 
     public Device(String producer, String model, int yearOfProduction)
     {

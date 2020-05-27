@@ -29,8 +29,10 @@ public class Main
         sister.firstName = "Magda";
         sister.lastName = "Cieślik";
         sister.setSalary(12500.0);
-        sister.cash = 5000.0;
+        sister.cash = 50000.0;
         sister.farm = new FarmAnimal[15];
+        sister.garage = new Car[2];
+        sister.garage[0] = new Car("Mercedes", "SEC", 1970,300.0);
 
         Pet dog = new Pet("dog");
         Pet lion = new Pet("lion");
@@ -56,7 +58,7 @@ public class Main
         smellyOne.setValue(15000.0);
 
         /* console */
-        System.out.println("Hello "+me.firstName+"!");
+        System.out.println("Hello "+me+"!");
         lion.feed();
         dog.feed(1.0);
         for(int i=1; i<4; i++)
@@ -72,9 +74,8 @@ public class Main
         dog.sell(sister,me,1500.0);
         System.out.println(sister+" your animal is: "+sister.pet.species);
         lion.sell(me,sister, 3000.0);
-        cleanOne.sell(sister,me,90000.0);
-        System.out.println(me+" your car still is: " +me.getCar(0));
-        System.out.println(me+"'s account balance: "+me.cash);
+        /*cleanOne.sell(sister,me,90000.0); // exception
+        System.out.println(me+" your car still is: " +me.getCar(0));*/
         smartPhone.sell(sister,me,500.0);
         /* cleanOne.refuel(); */
         sister.phone.installAnApp("WhatsApp");
@@ -91,6 +92,16 @@ public class Main
         {
             System.out.println(me.garage[i]);
         }
-        me.garageValue();
+        System.out.println("Mateusz's garage value: "+me.garageValue());
+        System.out.println("Magda's garage value: "+sister.garageValue());
+        smellyOne.sell(sister,me,10000.0);
+        System.out.println("Mateusz's garage value: "+me.garageValue());
+        System.out.println("Magda's garage value: "+sister.garageValue());
+        Arrays.sort(sister.garage);
+        for(int i = 0; i<me.garage.length;i++)
+        {
+            System.out.println(sister.garage[i]);
+        }
+
     }
 }
