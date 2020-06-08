@@ -3,7 +3,7 @@ package com.company.devices;
 import com.company.creatures.Animal;
 import com.company.creatures.Human;
 
-public class Car extends Device
+public abstract class Car extends Device
 {
     public final Double horsePower;
 
@@ -34,7 +34,7 @@ public class Car extends Device
             System.out.println(buyer+"'s account balance: "+buyer.cash);
         }
     }
-    //public abstract void refuel();
+    public abstract void refuel();
     @Override
     public void turnOn()
     {

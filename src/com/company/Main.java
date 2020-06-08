@@ -22,8 +22,8 @@ public class Main
         me.farm[1] = new FarmAnimal("cow",1500.0);
         me.farm[2] = new FarmAnimal("horse",400.0);
         me.garage = new Car[2];
-        me.garage[0] = new Car("Tesla", "Model S", 2019, 730.0);
-        me.garage[1] = new Car("BMW", "E46", 2006,215.0);
+        me.garage[0] = new Electric("Tesla", "Model S", 2019, 730.0);
+        me.garage[1] = new LPG("BMW", "E46", 2006,215.0);
 
         Human sister = new Human(15,4);
         sister.firstName = "Magda";
@@ -32,7 +32,7 @@ public class Main
         sister.cash = 50000.0;
         sister.farm = new FarmAnimal[15];
         sister.garage = new Car[2];
-        sister.garage[0] = new Car("Mercedes", "SEC", 1970,300.0);
+        sister.garage[0] = new Diesel("Mercedes", "SEC", 1970,300.0);
 
         Pet dog = new Pet("dog");
         Pet lion = new Pet("lion");
@@ -77,7 +77,7 @@ public class Main
         /*cleanOne.sell(sister,me,90000.0); // exception
         System.out.println(me+" your car still is: " +me.getCar(0));*/
         smartPhone.sell(sister,me,500.0);
-        /* cleanOne.refuel(); */
+        cleanOne.refuel();
         sister.phone.installAnApp("WhatsApp");
         sister.phone.installAnApp("WhatsApp",4.34);
         sister.phone.installAnApp("GitHub",3.21,"github.com");
