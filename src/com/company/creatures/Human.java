@@ -1,5 +1,6 @@
 package com.company.creatures;
 
+import com.company.DealList;
 import com.company.devices.Car;
 import com.company.devices.Phone;
 
@@ -57,18 +58,20 @@ public class Human extends Animal
 
     public void setCar(Car car, Integer index)
     {
-        if(this.salary>car.getValue())
-        {
-            System.out.println("You can buy car for cash!");
+        if (car == null) {
+            this.garage[index] = null;
+        } else if (isGarageFull()) {
+            System.out.println("No space in the garage");
+        } else {
             this.garage[index] = car;
+            if (car.transactions.size() == 0) {
+                car.transactions.add(new DealList(this, this, 0.0));
+            }
+            if (car.transactions.size() > 0) {
+                if (car.transactions.getLast().buyer != this)
+                    car.transactions.add(new DealList(this, this, 0.0));
+            }
         }
-        else if(this.salary*12>car.getValue())
-        {
-            System.out.println("You can buy a car on credit!");
-            this.garage[index] = car;
-        }
-        else
-            System.out.println("Think about another car!");
     }
     public Car getCar(Integer index)
     {

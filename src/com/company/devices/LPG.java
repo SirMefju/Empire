@@ -6,11 +6,11 @@ public class LPG extends Car
     {
         super(producer, model, yearOfProduction, horsePower);
     }
-    /*@Override
+    @Override
     public void refuel()
     {
         System.out.println("rich car");
-    }*/
+    }
     public String toString()
     {
         return "LPG car: " +this.producer+" "+this.model;

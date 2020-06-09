@@ -102,6 +102,11 @@ public class Main
         {
             System.out.println(sister.garage[i]);
         }
+        Car.wasOwner(me);
+        Car.wasOwner(new Human());
+        Car.realDeal(me, sister);
+        Car.realDeal(sister, me);
+        Car.howManyTransactions();
 
     }
 }
