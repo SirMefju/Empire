@@ -64,12 +64,12 @@ public class Human extends Animal
             System.out.println("No space in the garage");
         } else {
             this.garage[index] = car;
-            if (car.transactions.size() == 0) {
-                car.transactions.add(new DealList(this, this, 0.0));
+            if (car.deals.size() == 0) {
+                car.deals.add(new DealList(this, this, 0.0));
             }
-            if (car.transactions.size() > 0) {
-                if (car.transactions.getLast().buyer != this)
-                    car.transactions.add(new DealList(this, this, 0.0));
+            if (car.deals.size() > 0) {
+                if (car.deals.getLast().buyer != this)
+                    car.deals.add(new DealList(this, this, 0.0));
             }
         }
     }
@@ -112,8 +112,10 @@ public class Human extends Animal
             }
         }
     }
-    @Override
-    public String toString() {
-        return this.firstName + " " + this.lastName;
+    public boolean isGarageFull() {
+        for (Car car : this.garage) {
+            if (car == null) return false;
+        }
+        return true;
     }
 }
