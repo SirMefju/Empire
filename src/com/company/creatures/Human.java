@@ -118,4 +118,9 @@ public class Human extends Animal
         }
         return true;
     }
+    @Override
+    public String toString()
+    {
+        return this.firstName;
+    }
 }

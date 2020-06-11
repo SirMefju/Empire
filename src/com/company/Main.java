@@ -78,14 +78,21 @@ public class Main
         System.out.println(me+" your car still is: " +me.getCar(0));*/
         smartPhone.sell(sister,me,500.0);
         cleanOne.refuel();
-        sister.phone.installAnApp("WhatsApp");
-        sister.phone.installAnApp("WhatsApp",4.34);
-        sister.phone.installAnApp("GitHub",3.21,"github.com");
         Arrays.sort(me.farm);
         for(int i = 0; i<me.farm.length;i++)
         {
             System.out.println(me.farm[i]);
         }
+        Application WhatsApp = new Application("WhatsApp", 7.34,0.0);
+        Application Tinder = new Application("Tinder", 2.0, 10.0);
+        Application Linkedln = new Application("Linkedln", 1.9, 0.0);
+        Application PsApp = new Application("PsApp", 50.0, 12.0);
+
+        sister.phone.installAnApp(me, new Application[]{WhatsApp, Tinder, Linkedln, PsApp});
+        sister.phone.isAppInstalled(WhatsApp);
+        sister.phone.isAppInstalled("WhatsApp");
+        System.out.println(sister.phone.sumValueOfApps());
+        sister.phone.showFreeApps();
         pig.beEaten();
         Arrays.sort(me.garage);
         for(int i = 0; i<me.garage.length;i++)
