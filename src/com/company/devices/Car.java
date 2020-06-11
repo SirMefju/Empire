@@ -8,7 +8,7 @@ import java.util.LinkedList;
 public abstract class Car extends Device
 {
     public final Double horsePower;
-    public LinkedList<DealList> deals = new LinkedList<DealList>();
+    public static LinkedList<DealList> deals = new LinkedList<DealList>();
 
     public Car(String producer, String model, int yearOfProduction, Double horsePower   )
     {
@@ -43,19 +43,19 @@ public abstract class Car extends Device
     {
         System.out.println("LAST ONE RIDE");
     }
-    public void realDeal(Human seller, Human buyer) {
+    public static void realDeal(Human seller, Human buyer) {
         if (deals.stream().anyMatch(x -> x.seller.equals(seller) &&  x.buyer.equals(buyer)))
             System.out.println(buyer+" bought car from "+seller);
         else
             System.out.println("false deal");
     }
-    public void wasOwner(Human human) {
+    public static void wasOwner(Human human) {
         if (deals.stream().anyMatch(x -> x.buyer.equals(human)))
             System.out.println(human + " had a car!");
         else System.out.println(human + " didn't have a car!");
     }
-    public void howManyTransactions() {
-        int number = this.deals.size();
+    public static void howManyTransactions() {
+        int number = deals.size();
         System.out.println("This car changed its owner " + number + " times");
     }
     public String toString()
